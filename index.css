@@ -1,0 +1,9 @@
+body {
+    margin : 0 auto;
+}
+
+.btnClass {
+    position: absolute;
+    bottom: 5px;
+    text-align: center;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Jsapp">
+<head>
+	<title>main</title>
+	<!-- stylesheets -->
+	<script type="text/javascript" src="lib/jquery-3.4.1.min.js"></script>
+	<link rel="stylesheet" href="lib/bootstrap.min.css">
+	<link rel="stylesheet" href="index.css">
+	<script type="text/javascript" src="lib/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.0/angular.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.0/angular-aria.min.js"></script>
+<!-- imports scripe or files -->
+<script  src="index.js"></script>
+<script type="text/javascript" src="views/features/list/list.component.js"></script>
+<script type="text/javascript" src="views/features/detail/details.component.js"></script>
+<script type="text/javascript" src="views/common/Modal/modal.component.js"></script>
+<script type="text/javascript" src="views/common/button/button.component.js"></script>
+</head>
+<body >
+<div class="container-fluid">
+	<h3 class="bg-primary text-center">Home</h3>
+	<div class="row">
+		<div class="col-md-5  border border-danger rounded m-3">
+			<h3 class="text-center"> Detail Component</h3>
+			<details-compo></details-compo>
+		</div>
+		<div class="col-md-5  border border-warning rounded m-3">
+			<h3 class="text-center"> List Component</h3>
+			<list-compo name="'xyz'" age="'twenty'" exp=" 'two two'"></list-compo>
+		</div>
+	</div>
+</div>
+</body>
+</html>
