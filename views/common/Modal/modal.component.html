@@ -8,7 +8,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Student List</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -16,6 +16,10 @@
         <div class="modal-body">
           <h5 class="text-truncate">{{ModalCtrl.text}} </h5>
           <hr />
+          <ul>
+            <li ng-repeat="student in selectedDepartment">{{student}}</li>
+          </ul>
+          <h5> Also for 2-way-binding</h5>
           <input type="text" placeholder="enter username " ng-model="ModalCtrl.username" id="modalInput"/>
         </div>
         <div class="modal-footer">

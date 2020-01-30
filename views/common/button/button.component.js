@@ -4,12 +4,14 @@ angular.module('BtnModule', []).component('buttonCompo' , {
     bindings:{
         name:'<'
     },
-    controller: function ($scope, $attrs, $element) {
+    controller: function ($scope, $attrs, $element, $rootScope) {
         var scope = this;
         scope.$onInit = () => {
             $scope.labelName = $attrs.name;
         },
-        $scope.showModal =  () => {
+        $scope.showModal =  (eve) => {
+            $rootScope.selectedDepartment = $rootScope.depttArray.filter( ele => ele.department ==  eve.target.innerText);
+            console.log('  $rootScope.selectedDepartment : ' ,   $rootScope.selectedDepartment);
             $("#modalTrigger").click();
         }
     }

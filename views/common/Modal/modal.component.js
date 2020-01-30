@@ -9,13 +9,15 @@ angular.module('Modalmodule', []).component('modalCompo', {
         username : '<?',
         linkFunction : '&'
     },
-    controller : ($scope, $attrs, $element, $rootScope) => {
+    controller : function ($scope, $attrs, $element, $rootScope) {
         var scope = this;
-        scope.$onInit = function($scope) {
-
+        scope.$onInit = function() {
+            // scope.selectedDepartment = $rootScope.selectedDepartment ;
         },
-        console.log('name : ' , $attrs.username);
-    
+        scope.$doCheck = () => {
+            $rootScope.selectedDepartment ?  $scope.selectedDepartment = $rootScope.selectedDepartment[0].studenList : false;
+            console.log('selectedDepartment : scope.$doCheck  ' ,   $scope.selectedDepartment);
+        },
         $scope.linkFunction = () => {
             alert('that linking ,function from different different component is working');
         },
