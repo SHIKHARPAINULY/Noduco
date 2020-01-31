@@ -1,7 +1,18 @@
 function listCompoController($attrs, $scope, $rootScope) {
 		$scope.name = 'Siddharth';
-		$rootScope.$on('ShowDepartmentList' , (event)=>{
-			console.log('emitted event catched by the list component: ' , event);
+		$scope.DepartmentSelected = '';
+		$scope.DisplayDepartmentStudentList = [];
+		$rootScope.$on('mouseover' , ()=>{
+			$rootScope.depttArray.filter(ele => {
+				if (ele.department == $rootScope.ShowDepartmentList ){
+					$scope.DepartmentSelected  = $rootScope.ShowDepartmentList;
+					delete $rootScope.ShowDepartmentList;
+					$scope.DisplayDepartmentStudentList=ele.studenList;
+					$scope.listgenerated = true;
+					console.log('which is 0 ',$scope.DisplayDepartmentStudentList );
+					return;
+				};
+			});
 		});
 }
 	

@@ -1,12 +1,15 @@
 <div class="mb-5 border border-success rounded p-2">
-<h3 class="text-center"> <u>List child Component</u></h3>
+<h3 class="text-center"> Students of <strong>{{DepartmentSelected}}</strong> Department</h3>
 <hr />
-<div class="text-center">
-    <h6>This is data passing in isolated scope from parent</h6>
-    <div>
-        <p>{{listCtrl.name}}</p>
-        <p>{{listCtrl.age}}</p>
-        <p>{{listCtrl.exp}}</p>
-    </div>
+<div ng-if="DisplayDepartmentStudentList.length > 0">
+    <ol>
+      <li ng-repeat="(index, student) in DisplayDepartmentStudentList" class="border border-light ">
+        {{student}}
+      </li>
+    </ol>
+    <hr />
+</div>
+<div  ng-if="DisplayDepartmentStudentList.length == 0">
+  <h4>Hover the Department Buttons to see the list of the department students</h4>
 </div>
 </div>

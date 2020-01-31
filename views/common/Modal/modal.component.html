@@ -17,8 +17,11 @@
           <h5 class="text-truncate">{{ModalCtrl.text}} </h5>
           <hr />
           <ol>
-            <li ng-repeat="student in selectedDepartment[0].studenList">
-              <span class="text-success" >{{student}}</span>
+            <li ng-repeat="(index, student) in selectedDepartment[0].studenList" class="border border-light ">
+              <div class="row">
+                <span class="text-dark col-md-6" >{{student}}</span>
+                <span class="col-md-6 text-right text-danger" ng-click="edit('delete' , index)"><i class='fas fa-times'></i></span>
+              </div>
             </li>
           </ol>
           <hr />
@@ -28,7 +31,7 @@
         </div>
         <div class="modal-footer bg-dark">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="save()">Save changes</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="edit('add' , '-1')">Save changes</button>
         </div>
       </div>
     </div>
