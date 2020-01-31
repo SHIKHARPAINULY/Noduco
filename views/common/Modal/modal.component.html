@@ -17,12 +17,14 @@
           <h5 class="text-truncate">{{ModalCtrl.text}} </h5>
           <hr />
           <ol>
-            <li ng-repeat="student in selectedDepartment">
+            <li ng-repeat="student in selectedDepartment[0].studenList">
               <span class="text-success" >{{student}}</span>
             </li>
           </ol>
-          <h5> Also for 2-way-binding</h5>
-          <input type="text" placeholder="enter username " ng-model="ModalCtrl.username" id="modalInput"/>
+          <hr />
+          <p> 
+            <b>Add Student :</b> <input type="text" placeholder="enter username " ng-model="ModalCtrl.username" id="modalInput"/>
+          </p>
         </div>
         <div class="modal-footer bg-dark">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

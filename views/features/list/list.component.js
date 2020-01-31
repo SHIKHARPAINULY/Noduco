@@ -1,6 +1,9 @@
-function listCompoController($attrs, $scope) {
+function listCompoController($attrs, $scope, $rootScope) {
 		$scope.name = 'Siddharth';
-	}
+		$rootScope.$on('ShowDepartmentList' , (event)=>{
+			console.log('emitted event catched by the list component: ' , event);
+		});
+}
 	
 angular.module('Jsappp', []).component('listCompo', {
 		restrict : 'E',
