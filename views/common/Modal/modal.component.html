@@ -7,24 +7,31 @@
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Student List</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div class="modal-header bg-dark ">
+          <h5 class="modal-title text-light" id="exampleModalLabel">Modal Child Component</h5>
+          <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
           <h5 class="text-truncate">{{ModalCtrl.text}} </h5>
           <hr />
-          <ul>
-            <li ng-repeat="student in selectedDepartment">{{student}}</li>
-          </ul>
-          <h5> Also for 2-way-binding</h5>
-          <input type="text" placeholder="enter username " ng-model="ModalCtrl.username" id="modalInput"/>
+          <ol>
+            <li ng-repeat="(index, student) in selectedDepartment[0].studenList" class="border border-light ">
+              <div class="row">
+                <span class="text-dark col-md-6" >{{student}}</span>
+                <span class="col-md-6 text-right text-danger" ng-click="edit('delete' , index)"><i class='fas fa-times'></i></span>
+              </div>
+            </li>
+          </ol>
+          <hr />
+          <p> 
+            <b>Add Student :</b> <input type="text" placeholder="enter username " ng-model="ModalCtrl.username" id="modalInput"/>
+          </p>
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer bg-dark">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="save()">Save changes</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="edit('add' , '-1')">Save changes</button>
         </div>
       </div>
     </div>

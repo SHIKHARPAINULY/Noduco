@@ -2,22 +2,23 @@ function detailController($scope, $attrs, $element , $rootScope) {
     $scope.input="Shikhar Painuly";
     $rootScope.depttArray = [
         {   department:'Mechanical' ,
-            studenList: ['M1','M2','M3','M4','M5','M6']
+            studenList: ['Manish','Mahesh','Manoj','Manjeet','Mohit','Mohan']
         },
         {   department: 'Computer',
-            studenList: ['C1','C2','C3','C4','C5','C6']
+            studenList: ['Charlie','Catherine','Cally','Calvin']
         },
         {   department: 'Electrical' ,
-            studenList: ['E1','E2','E3','E4','E5','E6']
+            studenList: ['Emey','Ellie','Ether','Evein','Eva','Eve']
         },
         {   department: 'AutoMobile',
-            studenList: ['AM1','AM2','AM3','AM4','AM5','AM6']
+            studenList: ['Aarav','Andy','Ankur','Ajay','Amanada','Amol']
         },  
     ];
     $scope.depttArray = $rootScope.depttArray ;
-    $rootScope.$on('MyEvent', (event) => {
-        $scope.input = event.currentScope.username;
-    });
+    // $rootScope.$on('MyEvent', (event) => {
+    //     $scope.input = event.currentScope.username;
+    //     $scope.depttArray = $rootScope.depttArray ;
+    // });
 }
 
 angular.module('Jsapppp',[]).component('detailsCompo', {

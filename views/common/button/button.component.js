@@ -11,9 +11,12 @@ angular.module('BtnModule', []).component('buttonCompo' , {
         },
         $scope.showModal =  (eve) => {
             $rootScope.selectedDepartment = $rootScope.depttArray.filter( ele => ele.department ==  eve.target.innerText);
-            console.log('  $rootScope.selectedDepartment : ' ,   $rootScope.selectedDepartment);
             $("#modalTrigger").click();
-        }
+        },
+        $scope.hover = (event) => {
+            $rootScope.ShowDepartmentList =  event.target.id;
+            $rootScope.$emit('mouseover');
+        };
     }
 
 });
