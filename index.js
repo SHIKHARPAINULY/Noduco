@@ -4,3 +4,10 @@ var app = angular.module('Jsapp', ['Jsappp', 'Jsapppp', 'Modalmodule', 'BtnModul
 app.controller('mainctrl', function ($scope) {
 	$scope.title =  "Basic";
 });
+app.factory('APPCache', function($cacheFactory) {
+    // return $cacheFactory('APPCache', {
+    //     capacity: 50
+	// });
+	
+	return sessionStorage;
+});

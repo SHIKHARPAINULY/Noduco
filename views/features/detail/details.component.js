@@ -12,7 +12,11 @@ function detailController($scope, $attrs, $element , $rootScope) {
         },
         {   department: 'AutoMobile',
             studenList: ['Aarav','Andy','Ankur','Ajay','Amanada','Amol']
-        },  
+        }, 
+        {
+            department:'civil',
+            studenList:['shikhar']
+        } 
     ];
     $scope.depttArray = $rootScope.depttArray ;
     // $rootScope.$on('MyEvent', (event) => {

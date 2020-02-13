@@ -1,4 +1,9 @@
-function listCompoController($attrs, $scope, $rootScope) {
+function listCompoController($attrs, $scope, $rootScope,$cacheFactory, APPCache) {
+	//  setting abngularjs cache in memory 
+	 	// $scope.cache = $cacheFactory('USERS');
+		// $scope.cache.put('user', 'SHIKHAR PAINULY');
+		// APPCache.put(angular.lowercase('shikhar'), 'shikharshikhar');
+		APPCache.setItem(angular.lowercase('shikhar'), 'shikharshikhar');
 		$scope.name = 'Siddharth';
 		$scope.DepartmentSelected = '';
 		$scope.DisplayDepartmentStudentList = [];
@@ -9,7 +14,16 @@ function listCompoController($attrs, $scope, $rootScope) {
 					delete $rootScope.ShowDepartmentList;
 					$scope.DisplayDepartmentStudentList=ele.studenList;
 					$scope.listgenerated = true;
-					console.log('which is 0 ',$scope.DisplayDepartmentStudentList );
+					return;
+				};
+			});
+		});
+
+		$rootScope.$watch(()=>{
+			$rootScope.depttArray.filter(ele => {
+				if ( ele.department ==  $scope.DepartmentSelected  && $scope.DisplayDepartmentStudentList.length != ele.studenList.length){
+					$scope.DisplayDepartmentStudentList = ele.studenList;
+					console.log('this is the cache  factory : ' ,  APPCache.getItem('shikhar'));
 					return;
 				};
 			});
